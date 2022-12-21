@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Categories</title>
+</head>
+<body>
+<h1>
+    <span th:text="${name}">NAME</span>
+</h1>
+<div th:each="category : ${categories}">
+    <img th:src="@{/images/categories/${category.filename}}">
+    <a th:href="@{/items/{categoryname}(categoryname=${category.name})}" th:text="${category.name}">category</a>
+    <br/>
+</div>
+</body>
+</html>

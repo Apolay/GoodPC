@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${category}"></title>
+</head>
+<body>
+<h1 th:text="${category}"></h1>
+<div th:each="item : ${items}">
+    <br>
+    <img th:src="@{/images/${category}(category=${category})/${img}(img=${item.image})}">
+    <a th:href="@{/items/{id}(id=${item.id})}">
+        <h3 th:text="${item.name}">NAME </h3>
+    </a>
+    <h4 th:text="${item.description}">DESCRIPTION</h4>
+    <h4>Price:
+        <span th:text="${item.price.moneyAmount}">MONEY AMOUNT</span>
+        <span th:text="${item.price.currency}">CURRENCY</span>
+    </h4>
+    <br>
+</div>
+</body>
+</html>

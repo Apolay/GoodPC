@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${item.name}"></title>
+</head>
+<body>
+<h1 th:text="${item.name}">NAME</h1>
+<div>
+    <img th:src="@{/images/items/${img}(img=${item.image})}">
+    <span th:text="${item.description}">DESCRIPTION</span>
+    <h3>Price:
+        <span th:text="${item.price.moneyAmount}">MONEY AMOUNT</span>
+        <span th:text="${item.price.currency}">CURRENCY</span>
+    </h3>
+    <br>
+</div>
+
+</body>
+</html>

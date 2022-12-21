@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>GoodPC</title>
+</head>
+<body>
+<h1>Our services</h1>
+<div th:each="service : ${services}">
+    <img th:src="@{images/services/${services.image}}">
+    <h3 th:text="${service.description}">DESCRIPTION</h3>
+    <h4>Price starts from:
+        <span th:text="${service.price.moneyAmount}"> PRICE </span>
+        <span th:text="${service.price.currency}"> CURRENCY</span>
+    </h4>
+</div>
+</body>
+</html>
